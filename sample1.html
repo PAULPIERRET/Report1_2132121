@@ -6,8 +6,7 @@
   </head>
 <body>
   <script>
-    window.addEventListener('DOMContentLoaded', init);
-    var init = function(){
+      var init = function(){
       var renderer = new THREE.WebGLRenderer();
       renderer.setSize(800,600);
       document.body.appendChild(renderer.domElement);
@@ -26,8 +25,19 @@
       box.position.z= -5;
       scene.add(box);
 
-      renderer.render(scene, camera);
+      var update = function(){
+        requestAnimationFrame(update);
+
+        box.rotation.x += 0.01;
+        box.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+      };
+      update();
+      
     }
+
+    windouw.addEventlistener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
