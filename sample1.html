@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-  <head>
-    <meta charset="utf-8">
-    <title>立方体</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-  </head>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<!-- three.jsを読み込む(ローカル) -->
+<!-- <script src="./three.js"></script> -->
+<!-- three.jsを読み込む(CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+</head>
 <body>
   <script>
-      var init = function(){
-      var renderer = new THREE.WebGLRenderer();
-      renderer.setSize(800,600);
-      document.body.appendChild(renderer.domElement);
+    var init = function() {
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    // レンダラーのサイズを設定
+    renderer.setSize(800, 600);
+    // canvasをbodyに追加
+    document.body.appendChild(renderer.domElement);
+    // シーンを作成
+    var scene = new THREE.Scene();
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
+    // 平行光源を生成
+    var light = new THREE.DirectionalLight(0xffffff);
+    light.position.set(1, 1, 1);
+    scene.add(light);
+    // 箱を作成
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+    var box = new THREE.Mesh(geometry, material);
+    box.position.z = -5;
+    scene.add(box);
 
-      var scene = new THREE.Scene();
+    var update = function() {
+    requestAnimationFrame(update);
+    // 箱を回転させる
+    box.rotation.x += 0.01;
+    box.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    };
+    update();
 
-      var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
-
-      var light = new THREE.DirectionalLight(0x00ff00);
-      light.position.set(1, 1, 1);
-      scene.add(light);
-
-      var geometry = new THREE.BoxGeometry(1, 1, 1);
-      var material = new THREE.MeshPhongMaterial({color:0x0000ff});
-      var box = new THREE.Mesh(geometry.material);
-      box.position.z= -5;
-      scene.add(box);
-
-      var update = function(){
-        requestAnimationFrame(update);
-
-        box.rotation.x += 0.01;
-        box.rotation.y += 0.01;
-
-        renderer.render(scene, camera);
-      };
-      update();
-      
     }
-
-    window.addEventlistener('DOMContentLoaded', init);
+    window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
