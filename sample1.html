@@ -15,12 +15,12 @@
 
       var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
 
-      var light = new three.dIERECTIONALlIGHT(0x00ff00);
+      var light = new THREE.DirectionalLight(0x00ff00);
       light.position.set(1, 1, 1);
       scene.add(light);
 
       var geometry = new THREE.BoxGeometry(1, 1, 1);
-      var material = new THREE.MeshPhongMaterial({color:0xffffff});
+      var material = new THREE.MeshPhongMaterial({color:0x0000ff});
       var box = new THREE.Mesh(geometry.material);
       box.position.z= -5;
       scene.add(box);
