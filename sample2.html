@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Demo</title>
+<title>Plane</title>
 <!-- three.jsを読み込む(CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 </head>
@@ -32,9 +32,9 @@
 
     var update = function() {
     requestAnimationFrame(update);
-    // 箱を回転させる
-    box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
+    // 平面を回転させる
+    plane.rotation.x += 0.01;
+    plane.rotation.y += 0.01;
     renderer.render(scene, camera);
     };
     update();
