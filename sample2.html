@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Plane</title>
+<title>Demo</title>
 <!-- three.jsを読み込む(CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 </head>
@@ -25,7 +25,7 @@
     scene.add(light);
     // 平面を作成
     var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var material = new THREE.MeshPhongMaterial({color: 0x0000ff, side: THREE.DoubleSide});
     var plane = new THREE.Mesh( geometry, material );
     plane.position.z = -5;
     scene.add(box);
