@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Demo</title>
+<title>Cone</title>
 <!-- three.jsを読み込む(CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 </head>
@@ -20,7 +20,7 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
     // 平行光源を生成
-    var light = new THREE.DirectionalLight(0xffffff);
+    var light = new THREE.DirectionalLight(0x0000ff);
     light.position.set(1, 1, 1);
     scene.add(light);
     // 円錐を作成
