@@ -37,21 +37,22 @@
     box.rotation.y += 0.01;
     renderer.render(scene, camera);
     };
+    update();
     // 箱2を作成
     var geometry2 = new THREE.BoxGeometry(1, 1, 1);
     var material2 = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
     var box2 = new THREE.Mesh(geometry2, material2);
-    box2.position.z = -1;
+    box2.position.z = -3;
     scene.add(box2);
 
-    var update = function() {
+    var update2 = function() {
     requestAnimationFrame(update);
     // 箱を回転させる
     box2.rotation.x += 0.01;
     box2.rotation.y += 0.01;
     renderer.render(scene, camera);
     };
-    update();
+    update2();
 
     }
     window.addEventListener('DOMContentLoaded', init);
