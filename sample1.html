@@ -2,9 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>Demo</title>
-<!-- three.jsを読み込む(ローカル) -->
-<!-- <script src="./three.js"></script> -->
+<title>Box</title>
 <!-- three.jsを読み込む(CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
 </head>
@@ -22,12 +20,12 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
     // 平行光源を生成
-    var light = new THREE.DirectionalLight(0x00ff00);
+    var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(1, 1, 1);
     scene.add(light);
     // 箱を作成
     var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    var material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
     var box = new THREE.Mesh(geometry, material);
     box.position.z = -5;
     scene.add(box);
