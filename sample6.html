@@ -23,7 +23,7 @@
     var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(1, 1, 1);
     scene.add(light);
-    // ドーナツを作成
+    // トーラスを作成
     var torusGeometry = new THREE.TorusGeometry( 0.5, 0.2, 6, 12 );
     var torusMaterial = new THREE. MeshPhongMaterial( { color: 0xff8c00 } );
     var torus = new THREE.Mesh( torusGeometry, torusMaterial );
@@ -32,7 +32,7 @@
 
     var update = function() {
     requestAnimationFrame(update);
-    // ドーナツを回転させる
+    // トーラスを回転させる
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.01;
     renderer.render(scene, camera);
