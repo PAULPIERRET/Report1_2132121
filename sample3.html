@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<!-- three.jsを読み込む(CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+</head>
+<body>
+  <script>
+    var init = function() {
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    // レンダラーのサイズを設定
+    renderer.setSize(800, 600);
+    // canvasをbodyに追加
+    document.body.appendChild(renderer.domElement);
+    // シーンを作成
+    var scene = new THREE.Scene();
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
+    // 平行光源を生成
+    var light = new THREE.DirectionalLight(0x0000ff);
+    light.position.set(1, 1, 1);
+    scene.add(light);
+    // 円錐を作成
+    var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 5 );
+    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xff0000} );
+    var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    cone.position.set( 0, 0, -5 );
+    scene.add(cone);
 
+    var update = function() {
+    requestAnimationFrame(update);
+    // 円錐を回転させる
+    plane.rotation.x += 0.01;
+    plane.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    };
+    update();
+
+    }
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
