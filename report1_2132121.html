@@ -20,9 +20,9 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
     // 平行光源を生成
-    var light = new THREE.DirectionalLight(0xffffff);
-    light.position.set(1, 1, 1);
-    scene.add(light);
+    var light1 = new THREE.DirectionalLight(0xffffff);
+    light1.position.set(1, 1, 1);
+    scene.add(light1);
     var light2 = new THREE.DirectionalLight(0xffffff);
     light2.position.set(-1, 1, 1);
     scene.add(light2);
