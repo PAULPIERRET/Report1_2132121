@@ -24,7 +24,7 @@
     light.position.set(1, 1, 1);
     scene.add(light);
     // 平面を作成
-    var geometry = new THREE.PlaneGeometry(5,5);
+    var geometry = new THREE.PlaneGeometry(1,1);
     var material = new THREE.MeshPhongMaterial({color: 0x0000ff, side: THREE.DoubleSide});
     var plane = new THREE.Mesh(geometry, material);
     plane.position.z = -5;
