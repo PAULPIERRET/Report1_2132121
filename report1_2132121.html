@@ -17,9 +17,8 @@
     document.body.appendChild(renderer.domElement);
     // シーンを作成
     var scene = new THREE.Scene();
-    // カメラを作成
+    // カメラを作成位置は変更してない
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
-    camera.position.set(0, 0, 10); // カメラの位置を設定
 
     // 箱を作成
     var geometry = new THREE.BoxGeometry(1, 1, 1);
