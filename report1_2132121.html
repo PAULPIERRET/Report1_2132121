@@ -39,24 +39,32 @@
     var coneDistance = 1.1; // 円錐同士の横方向の距離
     var coneYPosition = 1.5; // 円錐のY軸位置
 
-    var cone = new THREE.Mesh(coneGeometry, coneMaterial);
-    cone.position.set(-2.3, coneYPosition, -5);
-    cone.lookAt(camera.position);
-    scene.add(cone);
+    var cone1 = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone1.position.set(-2.3, coneYPosition, -5);
+    cone1.lookAt(camera.position);
+    scene.add(cone1);
 
     var cone2 = new THREE.Mesh(coneGeometry, coneMaterial);
     cone2.position.set(-2.3 + coneDistance, coneYPosition, -5);
     cone2.lookAt(camera.position);
     scene.add(cone2);
 
-    for(var i=3 ; i<6; i++){
-      var cone = new THREE.Mesh(coneGeometry, coneMaterial);
-      cone2.position.set(-2.3 + coneDistance, coneYPosition, -5);
-      cone2.lookAt(camera.position);
-      scene.add(cone);
+    var cone3 = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone3.position.set(-2.3 + coneDistance, coneYPosition, -5);
+    cone3.lookAt(camera.position);
+    scene.add(cone3);
 
-      cone.name = "cone" + i;
-    }
+    var cone4 = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone4.position.set(-2.3 + coneDistance, coneYPosition, -5);
+    cone4.lookAt(camera.position);
+    scene.add(cone4);
+
+    var cone5 = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone5.position.set(-2.3 + coneDistance, coneYPosition, -5);
+    cone5.lookAt(camera.position);
+    scene.add(cone5);
+
+
     // 平行光源を生成
     var light1 = new THREE.DirectionalLight(0xffffff);
     light1.position.set(1, 1, 1);
@@ -69,8 +77,11 @@
     requestAnimationFrame(update);
     // 箱を回転させる
     box1.rotation.y += 0.01;
-    cone.rotation.x += 0.01;
+    cone1.rotation.x += 0.01;
     cone2.rotation.x -= 0.01;
+    cone3.rotation.x += 0.01;
+    cone4.rotation.x -= 0.01;
+    cone5.rotation.x += 0.01;
     renderer.render(scene, camera);
     };
     update();
