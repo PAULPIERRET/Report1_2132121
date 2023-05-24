@@ -34,14 +34,16 @@
     box1.position.set(-2, 0, -5);
     scene.add(box1);
     // 円錐を作成
-    var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 100 );
-    var coneMaterial = new THREE. MeshPhongMaterial( {color: 0xff0000} );
-    var cone = new THREE.Mesh( coneGeometry, coneMaterial );
-    cone.position.set(-2.3, 1.5, -5);
+    var coneDistance = 1.2; // 円錐同士の横方向の距離
+    var coneYPosition = 1.5; // 円錐のY軸位置
+
+    var cone = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone.position.set(-2.3, coneYPosition, -5);
     cone.lookAt(camera.position);
     scene.add(cone);
-    var cone2 = new THREE.Mesh( coneGeometry, coneMaterial );
-    cone2.position.set(-2.0, 1.5, -5);
+
+    var cone2 = new THREE.Mesh(coneGeometry, coneMaterial);
+    cone2.position.set(-2.3 + coneDistance, coneYPosition, -5);
     cone2.lookAt(camera.position);
     scene.add(cone2);
 
@@ -58,6 +60,7 @@
     // 箱を回転させる
     box1.rotation.y += 0.01;
     cone.rotation.x += 0.01;
+    cone2.rotation.x += 0.01;
     renderer.render(scene, camera);
     };
     update();
