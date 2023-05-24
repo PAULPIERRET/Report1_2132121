@@ -50,17 +50,17 @@
     scene.add(cone2);
 
     var cone3 = new THREE.Mesh(coneGeometry, coneMaterial);
-    cone3.position.set(-2.3 + coneDistance, coneYPosition*2, -5);
+    cone3.position.set(-2.3 + coneDistance*2, coneYPosition, -5);
     cone3.lookAt(camera.position);
     scene.add(cone3);
 
     var cone4 = new THREE.Mesh(coneGeometry, coneMaterial);
-    cone4.position.set(-2.3 + coneDistance, coneYPosition*3, -5);
+    cone4.position.set(-2.3 + coneDistance*3, coneYPosition, -5);
     cone4.lookAt(camera.position);
     scene.add(cone4);
 
     var cone5 = new THREE.Mesh(coneGeometry, coneMaterial);
-    cone5.position.set(-2.3 + coneDistance, coneYPosition*4, -5);
+    cone5.position.set(-2.3 + coneDistance*4, coneYPosition, -5);
     cone5.lookAt(camera.position);
     scene.add(cone5);
 
