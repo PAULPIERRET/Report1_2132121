@@ -49,6 +49,14 @@
     cone2.lookAt(camera.position);
     scene.add(cone2);
 
+    for(var i=3 ; i<6; i++){
+      var cone = new THREE.Mesh(coneGeometry, coneMaterial);
+      cone2.position.set(-2.3 + coneDistance, coneYPosition, -5);
+      cone2.lookAt(camera.position);
+      scene.add(cone);
+
+      cone.name = "cone" + i;
+    }
     // 平行光源を生成
     var light1 = new THREE.DirectionalLight(0xffffff);
     light1.position.set(1, 1, 1);
