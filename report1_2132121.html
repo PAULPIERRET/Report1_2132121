@@ -36,7 +36,7 @@
     // 円錐を作成
     var coneGeometry = new THREE.ConeGeometry(0.5, 1, 100);
     var coneMaterial = new THREE.MeshPhongMaterial({ color: 0xff0000 });
-    var coneDistance = 1.2; // 円錐同士の横方向の距離
+    var coneDistance = 1.1; // 円錐同士の横方向の距離
     var coneYPosition = 1.5; // 円錐のY軸位置
 
     var cone = new THREE.Mesh(coneGeometry, coneMaterial);
@@ -62,7 +62,7 @@
     // 箱を回転させる
     box1.rotation.y += 0.01;
     cone.rotation.x += 0.01;
-    cone2.rotation.x += 0.01;
+    cone2.rotation.x -= 0.01;
     renderer.render(scene, camera);
     };
     update();
