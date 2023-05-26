@@ -20,13 +20,6 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
 
-    //座標
-    const gridHelper = new THREE.GridHelper(2,10); // size, step
-    scene.add(gridHelper);
-    const axisHelper = new THREE.AxisHelper(2); //軸の長さ X:赤、Y:緑、z:青
-    scene.add(axisHelper);
-
-
     // 球を作成
     var sphereGeometry1 = new THREE.SphereGeometry( 0.25, 32, 32 );
     var sphereMaterial1 = new THREE. MeshPhongMaterial( {color: 0x7b68ee} );
