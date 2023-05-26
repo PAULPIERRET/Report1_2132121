@@ -5,7 +5,6 @@
 <title>Box</title>
 <!-- three.jsを読み込む(CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
-<script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
   <script>
@@ -21,8 +20,6 @@
     // カメラを作成
     var camera = new THREE.PerspectiveCamera(45, 800 / 600, 1, 1000);
       
-    const controls = new THREE.OrbitControls(camera, document.body); 
-
     // 球を作成
     var sphereGeometry1 = new THREE.SphereGeometry( 0.25, 32, 32 );
     var sphereMaterial1 = new THREE. MeshPhongMaterial( {color: 0x7b68ee} );
@@ -169,7 +166,6 @@
     cone9.rotation.x -= 0.01;
     cone10.rotation.x += 0.01;
     renderer.render(scene, camera);
-    requestAnimationFrame(update);
     };
     update();
 
